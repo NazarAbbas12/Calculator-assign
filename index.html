@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+            <input type="text" id="inp" disabled>
+            <div class="buttons">
+                <button class="btn_clear" onClick="clearInput()">C</button>
+                <button class="btn_num" onClick="appendNumber('00')">00</button>
+                <button class="btn_op" onClick="appendOperation('%')">%</button>
+                <button class="btn_op" onClick="appendOperation('/')">/</button>
+
+                <button class="btn_num" onClick="appendNumber('7')">7</button>
+                <button class="btn_num" onClick="appendNumber('8')">8</button>
+                <button class="btn_num" onClick="appendNumber('9')">9</button>
+                <button class="btn_op" onClick="appendOperation('*')">X</button>
+
+                <button class="btn_num" onClick="appendNumber('4')">4</button>
+                <button class="btn_num" onClick="appendNumber('5')">5</button>
+                <button class="btn_num" onClick="appendNumber('6')">6</button>
+                <button class="btn_op" onClick="appendOperation('-')">-</button>
+
+                <button class="btn_num" onClick="appendNumber('1')">1</button>
+                <button class="btn_num" onClick="appendNumber('2')">2</button>
+                <button class="btn_num" onClick="appendNumber('3')">3</button>
+                <button class="btn_op" onClick="appendOperation('+')">+</button>
+
+                <button class="btn_num btn_zero" onClick="appendNumber('0')">0</button>
+                <button class="btn_dot" onClick="appendNumber('.')">.</button>
+                <button class="btn_op" onClick="calculate()">=</button>
+            </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

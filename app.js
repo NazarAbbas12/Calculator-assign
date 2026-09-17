@@ -1,20 +1,28 @@
+const input = document.getElementById('inp');
 function appendNumber(value){
-    document.getElementById('inp').value += value;
+    if(input.value == 'Error'){
+        input.value = '';
+    }
+    input.value += value;
 }
 function appendOperation(operation){
-    document.getElementById('inp').value += operation;
+    if(input.value == 'Error'){
+        input.value = '';
+    }
+    input.value += operation;
 }
 
 function calculate(){
-
-    const input = document.getElementById('inp').value;
-    console.log(input);
-    if (input === '') {
+    if(input.value == ''){
         return;
     }
-    document.getElementById('inp').value = eval(input);
+    try {
+        input.value = eval(input.value);
+    } catch (error) {
+        input.value = 'Error';
+    }
 }
 
 function clearInput(){
-    document.getElementById('inp').value = '';
+    input.value = '';
 }

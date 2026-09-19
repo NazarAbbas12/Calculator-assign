@@ -1,63 +1,117 @@
-body{
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
     display: flex;
-    height: 90vh;
-    width: 90vw;
     align-items: center;
     justify-content: center;
-    background-color: gray;
+    padding: 20px;
+    background: #dfe6e9;
+    font-family: Arial, sans-serif;
 }
-.calculator{
+
+.calculator {
+    width: min(100%, 360px);
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    width: 15rem;
-    background-color: black;
-    padding: 10px;
+    gap: 18px;
+    background: #1e1e1e;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 #inp {
-    height: 60px;
-    font-size: 28px;
-    padding: 0 10px;
-    box-sizing: border-box;
-}
-.buttons{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
-    margin-top: 15px;
-}
-.buttons button {
-    height: 50px;
-    width: 50px;
-    font-size: 22px;
-    border-radius: 50%;
+    width: 100%;
+    height: 75px;
+    padding: 0 15px;
     border: none;
-}
-.buttons button:hover{
-    background-color: #555;
-    transform: scale(1.1);
-    cursor: pointer;
-}
-.btn_zero{
-    grid-column: span 2;
-    width: 128px !important;
-    border-radius: 30px !important;
-}
-.btn_op{
-    background-color: orange;
-    color:white
-}
-.btn_clear{
-    background-color: rgb(178, 172, 172);
+    outline: none;
+    border-radius: 15px;
+    background: #f5f5f5;
+    color: #222;
+    font-size: clamp(28px, 8vw, 40px);
+    font-weight: 500;
+    text-align: right;
 }
 
-@media screen and (min-width:768px){
-    .calculator{
-        width: 20rem;
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.buttons button {
+    width: 100%;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    background: #3a3a3a;
+    color: white;
+    font-size: clamp(18px, 5vw, 24px);
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.buttons button:hover {
+    background: #505050;
+    transform: scale(1.05);
+}
+
+.buttons button:active {
+    transform: scale(0.95);
+}
+
+.btn_zero {
+    grid-column: span 2;
+    width: 100% !important;
+    aspect-ratio: auto !important;
+    border-radius: 40px !important;
+}
+
+.buttons button.btn_op {
+    background: #f39c12;
+    color: white;
+}
+
+.btn_op:hover {
+    background: #f5b041 !important;
+}
+
+.btn_clear {
+    background: #777;
+    color: white;
+}
+
+.btn_clear:hover {
+    background: #999 !important;
+}
+
+@media screen and (max-width: 500px) {
+
+    body {
+        padding: 10px;
     }
-    .buttons button{
+    .calculator {
+        width: 100%;
+        max-width: 250px;
+        padding: 14px;
+        gap: 12px;
+        border-radius: 20px;
+    }
+    #inp {
         height: 60px;
-        width: 60px;
+        font-size: 28px;
+    }
+    .buttons {
+        gap: 7px;
+    }
+    .buttons button {
+        font-size: 20px;
     }
 }
